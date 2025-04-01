@@ -1,6 +1,6 @@
-# Portafolio Minimalista y Llamativo - Andres Felipe Vallejo Sastoque
+# Portafolio - Andres Felipe Vallejo Sastoque
 
-Un portafolio de una sola página inspirado en el estilo minimalista de `mattfarley.ca`, pero con elementos dinámicos y llamativos implementados con JavaScript.
+Un portafolio de una sola página inspirado en el estilo minimalista, pero con elementos dinámicos y llamativos implementados con JavaScript.
 
 **Características:**
 * Diseño minimalista y centrado.
@@ -11,8 +11,6 @@ Un portafolio de una sola página inspirado en el estilo minimalista de `mattfar
 * Enlaces funcionales a perfiles profesionales (GitHub, LinkedIn, Email).
 
 Construido con HTML, CSS y JavaScript. Listo para desplegar en GitHub Pages.
-
-**Sitio en vivo:** `[Pega aquí tu URL de GitHub Pages cuando esté lista]`
 
 ## Configuración Opcional
 
