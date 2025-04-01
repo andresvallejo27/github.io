@@ -1,0 +1,137 @@
+/* --- Paleta de Colores Unificada --- */
+:root {
+    --background-color: #0a192f; /* Azul Navy oscuro (Fondo Principal y Secciones) */
+    --section-background: #070a0e; /* Negro azulado para footer y BG alterno */
+    --card-background: #112240; /* Azul más claro para tarjetas/elementos */
+    --primary-text-color: #e6f1ff; /* Blanco azulado */
+    --secondary-text-color: #8892b0; /* Gris azulado claro */
+    --accent-color: #64ffda; /* Cyan brillante */
+    --accent-hover-color: #7fffd4; /* Aquamarine (un hover más claro para cyan) */
+    --border-color: rgba(136, 146, 176, 0.2);
+    --border-hover-color: rgba(100, 255, 218, 0.4); /* Borde cyan sutil en hover */
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Reseteo y Globales --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-main);
+    background-color: var(--background-color); /* Fondo unificado */
+    color: var(--primary-text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Contenedores --- */
+/* Clases de container y row/col de Bootstrap se usan directamente */
+.section-container { padding-top: 60px; padding-bottom: 60px; }
+
+/* --- Fondo Particles.js --- */
+#particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background-color: var(--background-color); }
+
+/* --- Contenido Principal Wrapper --- */
+.main-content { position: relative; z-index: 1; }
+
+/* --- Sección Hero --- */
+.hero-section { min-height: 95vh; display: flex; justify-content: center; align-items: center; padding: 80px 20px; }
+.hero-content { max-width: 750px; }
+/* Estilo para el Logo */
+.hero-logo {
+    max-width: 100px; /* Ajusta el tamaño máximo */
+    height: auto;     /* Mantiene la proporción */
+    display: block;   /* Asegura que ocupe su propio espacio */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px; /* Espacio entre logo y nombre */
+}
+.name { font-size: clamp(2.8rem, 7vw, 4.5rem); font-weight: 900; color: #ffffff; margin-bottom: 0.75rem; letter-spacing: -1px; }
+.role { font-size: clamp(1.3rem, 4vw, 1.8rem); font-weight: 400; color: var(--accent-color); margin-bottom: 1.5rem; min-height: 1.6em; }
+.typed-cursor { color: var(--accent-color); opacity: 1; animation: typedjsBlink 0.7s infinite; }
+@keyframes typedjsBlink { 50% { opacity: 0.0; } }
+.bio { font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--secondary-text-color); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.links a { color: var(--secondary-text-color); text-decoration: none; font-size: clamp(0.9rem, 2vw, 1rem); margin: 0 12px; transition: color 0.3s ease; display: inline-flex; align-items: center; padding: 5px 0; }
+.links a i { font-size: 1.3em; margin-right: 6px; transition: transform 0.3s ease; }
+.links a:hover { color: var(--accent-color); }
+.links a:hover i { transform: scale(1.1); }
+
+/* --- Títulos de Sección --- */
+.section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 700; color: var(--primary-text-color); position: relative; display: inline-block; padding-bottom: 10px; margin-bottom: 50px !important; }
+.section-title::after { content: ''; position: absolute; display: block; width: 60px; height: 3px; background: var(--accent-color); bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 3px; }
+
+/* --- Sección Enfoque y Trayectoria (Reutiliza role-card) --- */
+.enfoque-section, .trayectoria-section, .proyectos-personales-section { background-color: transparent; }
+.section-bg { background-color: rgba(17, 34, 64, 0.2); } /* Fondo sutil opcional */
+
+/* Estilo Común para Tarjetas (Enfoque, Experiencia, Educación) */
+.role-card {
+    background-color: var(--card-background); padding: 30px 25px; border-radius: 8px;
+    border: 1px solid var(--border-color); height: 100%; /* <-- Necesario con d-flex align-items-stretch */
+    transition: all 0.3s ease; display: flex; flex-direction: column; text-align: center;
+}
+.role-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); border-color: var(--border-hover-color); }
+.role-icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 20px; }
+.role-title, .item-title { font-size: 1.2rem; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
+.role-description { font-size: 0.9rem; color: var(--primary-text-color); margin-bottom: 20px; flex-grow: 1; }
+/* Detalles en Enfoque */
+.role-details { text-align: left; padding-top: 15px; border-top: 1px solid rgba(136, 146, 176, 0.1); margin-top: auto; }
+.role-details h4 { font-size: 0.9rem; font-weight: 600; color: var(--accent-color); margin-bottom: 5px; }
+.role-details p { font-size: 0.85rem; color: var(--secondary-text-color); margin-bottom: 10px; }
+
+/* Ajustes específicos para tarjetas de Trayectoria (Experiencia/Educación) */
+.trayectoria-section .role-card { text-align: left; }
+.trayectoria-section .role-card .role-icon { margin-bottom: 15px; text-align: left; }
+.trayectoria-section .role-card .item-title { text-align: left; font-size: 1.1rem; margin-bottom: 5px; }
+.trayectoria-section .role-card .company,
+.trayectoria-section .role-card .institution { font-size: 0.95rem; font-weight: 600; color: var(--accent-color); margin-bottom: 5px; display: block; }
+.trayectoria-section .role-card .date { display: block; font-size: 0.8rem; color: var(--secondary-text-color); margin-bottom: 12px; }
+.trayectoria-section .role-card .details { font-size: 0.85rem; color: var(--secondary-text-color); margin-bottom: 0; flex-grow: 1; margin-top: 0; text-align: left; }
+/* Tarjeta de Certificaciones */
+.trayectoria-section .role-card.certifications .item-title,
+.trayectoria-section .role-card.certifications .details { text-align: center; }
+.trayectoria-section .role-card.certifications .details { font-style: italic; }
+
+/* Tarjeta Vacía */
+.role-card.empty-card { background-color: transparent; border: 1px dashed var(--border-color); box-shadow: none; align-items: center; justify-content: center; }
+.role-card.empty-card .role-icon { color: var(--secondary-text-color); opacity: 0.5;}
+.role-card.empty-card:hover { border-color: var(--border-color); transform: none; }
+
+/* --- Sección Proyectos Personales --- */
+.proyectos-personales-section .section-intro { max-width: 650px; margin-left: auto; margin-right: auto; color: var(--secondary-text-color); font-size: 1.05rem; }
+/* Estilo Tarjeta Proyecto Personal */
+.personal-project-card {
+    background-color: var(--card-background); padding: 30px 25px; border-radius: 8px;
+    border: 1px solid var(--border-color); height: 100%; display: flex; flex-direction: column;
+    transition: all 0.3s ease; text-align: center;
+}
+.personal-project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); border-color: var(--border-hover-color); }
+.project-icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 15px; }
+.project-title { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 10px; }
+.project-description { font-size: 0.9rem; color: var(--primary-text-color); margin-bottom: 20px; flex-grow: 1; }
+.project-footer { margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(136, 146, 176, 0.1); }
+.project-footer .status { font-size: 0.8rem; font-weight: 600; color: var(--accent-color); display: block; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* --- Footer --- */
+.footer { background-color: var(--section-background); padding: 25px 0; border-top: 1px solid var(--border-color); margin-top: 60px; position: relative; z-index: 1; }
+.footer p { margin-bottom: 0; font-size: 0.85rem; color: var(--secondary-text-color); }
+
+/* --- Animación de Scroll Reveal --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.6s ease-out; will-change: opacity, transform; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- Responsividad --- */
+@media (max-width: 992px) { /* Tablets */
+    .section-container { padding-top: 50px; padding-bottom: 50px; }
+}
+@media (max-width: 768px) { /* Móviles grandes */
+    .name { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+    .role { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+    .bio { font-size: clamp(0.95rem, 3vw, 1.1rem); }
+    .section-title { font-size: 1.8rem; }
+    .proyectos-personales-section .section-intro { font-size: 1rem; }
+    .personal-project-card, .role-card { padding: 25px 20px; }
+    .project-title, .role-title, .item-title { font-size: 1.15rem; }
+}
+@media (max-width: 576px) { /* Móviles pequeños */
+     .role-card, .personal-project-card { padding: 20px 15px; }
+}
